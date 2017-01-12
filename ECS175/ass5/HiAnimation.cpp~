@@ -1,0 +1,69 @@
+#include <GL/glut.h>
+
+void display();
+void idleFunc();
+int MainWindow;
+GLuint Square;
+GLfloat angle;
+
+void main(int argc, char *argv[])
+{
+	glutInit(&argc, argv);
+	//note here we initialize double buffer viewing
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitWindowSize(300, 300);
+	glutInitWindowPosition(100, 100);
+
+	MainWindow = glutCreateWindow("Hello Graphics!!");
+	glClearColor(0, 0, 0, 0);
+	glutDisplayFunc(display);
+
+	//Here we specify a continuous "animation function"
+	//this function is continuously called
+	glutIdleFunc(idleFunc);
+
+	//Remember the display list trick from last discussion?
+	Square = glGenLists(1);
+	glNewList(Square, GL_COMPILE);
+	glColor3f(1, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex2f(30, 30);
+	glVertex2f(30, 50);
+	glVertex2f(50, 50);
+	glVertex2f(50, 30);
+	glEnd();
+	glEndList();
+
+	glLoadIdentity();
+	gluOrtho2D(-150, 150, -150, 150);
+
+	glutMainLoop();
+	return;
+}
+
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	
+	//here create a protective block so transformation inside does not have a compound effect
+	glPushMatrix();
+	glRotatef(angle, 0.0, 0.0, 1.0);
+	glCallList(Square);
+	glPopMatrix();
+
+	//this single OGL to swap buffer, draw our "back" buffer to the front
+	glutSwapBuffers();
+	
+	glFlush();
+}
+
+void idleFunc()
+{
+	//a simple rotation angle increment routine
+	angle += 2.0;
+	if (angle > 360)
+	{
+		angle -= 360;
+	}
+	glutPostRedisplay();
+}

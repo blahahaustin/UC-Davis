@@ -1,0 +1,89 @@
+#include <GL/glut.h>
+#include <iostream>
+
+void display();
+
+//some additional things needed for menu
+int SubMenu;  //a submenu id is needed if you choose to implement a submenu
+void createMenu();	//a function that creates menu
+void processMenu(int value); //----Call back function---// As explained during discussion, this process menu operations
+
+int MainWindow;
+int main (int argc, char *argv[])
+{
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE);
+	glutInitWindowSize(200, 200);
+	glutInitWindowPosition(100, 100);
+
+	MainWindow = glutCreateWindow("Hello Graphics!!");
+	glClearColor(0, 0, 0, 0);
+	glutDisplayFunc(display);
+
+	//Create and attach menu to the window
+	createMenu();
+
+	glutMainLoop();
+	return 0;
+}
+
+
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glLoadIdentity();
+
+	glFlush();
+}
+
+void createMenu()
+{
+	//here's a submenu if needed
+	SubMenu = glutCreateMenu(processMenu);
+
+	//this add an entry to the "current menu," and associate a value with it
+	//this value will be used by the callback function
+	//since we just created a submenu, this will add entry to that one
+	glutAddMenuEntry("Inside Submenu", 1);
+
+	//main menu, 
+	//note, here we pass in the same function to process the menu actions as above
+	glutCreateMenu(processMenu);
+	glutAddMenuEntry("Do something", 2);
+	glutAddMenuEntry("Do other things", 3);
+
+	//attach submenu to main menu
+	glutAddSubMenu("SubMenu", SubMenu);
+
+	glutAddMenuEntry("Exit", 0);
+
+	//attach menu to window which will be triggered by right button click
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+//This function is called if user clicked a menu entry
+//value is the value associated with a menu entry
+void processMenu(int value)
+{
+	if (value == 0)
+	{
+		glutDestroyWindow(MainWindow);
+		exit(0);
+		//bye!
+	}
+	else if (value == 1)
+	{
+		std::cout << "You clicked the submenu entry!!" << std::endl;
+	}
+	else if (value == 2)
+	{
+		glBegin(GL_LINES);
+		glVertex2f(0.0, 0.0);
+		glVertex2f(99.0, 99.0);
+		glEnd();
+	}
+	else if (value == 3)
+	{
+		//something else we can do?
+	}
+}

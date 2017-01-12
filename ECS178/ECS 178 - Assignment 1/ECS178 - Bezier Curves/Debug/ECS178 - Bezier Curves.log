@@ -1,0 +1,24 @@
+﻿Build started 4/21/2016 11:29:31 AM.
+     1>Project "C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\ECS178 - Bezier Curves\ECS178 - Bezier Curves.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/include/" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(126): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(227): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(228): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(290): warning C4018: '<=': signed/unsigned mismatch
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(416): warning C4838: conversion from 'GLdouble' to 'GLfloat' requires a narrowing conversion
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(416): warning C4244: 'initializing': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(489): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(490): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(706): warning C4244: '=': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(707): warning C4244: '=': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+     1>c:\users\austi_000\documents\visual studio 2015\projects\ecs 178 - assignment 1\ecs178 - bezier curves\main.cpp(752): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\Debug\ECS178 - Bezier Curves.exe" /INCREMENTAL /NOLOGO "C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glew32.lib" "C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\glfw3dll.lib" "C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\packages\nupengl.core.0.1.0.1\build\native\../..//build/native/lib/Win32\freeglut.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\Debug\ECS178 - Bezier Curves.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\Debug\ECS178 - Bezier Curves.lib" /MACHINE:X86 Debug\main.obj
+         ECS178 - Bezier Curves.vcxproj -> C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\Debug\ECS178 - Bezier Curves.exe
+     1>Done Building Project "C:\Users\austi_000\Documents\Visual Studio 2015\Projects\ECS 178 - Assignment 1\ECS178 - Bezier Curves\ECS178 - Bezier Curves.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.35

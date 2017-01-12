@@ -1,0 +1,11 @@
+Austin Berbereia
+912360346
+
+to run the program, type:
+
+	g++ zbuffer.cpp -lglut -lGL
+	./a.out
+
+If you wish to test additional triangle cases, you may change what is hardcoded in the 
+main display loop.
+The larger the z-value, the closer it is to the screen.

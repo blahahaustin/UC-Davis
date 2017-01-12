@@ -1,0 +1,62 @@
+#include <GL/glut.h>
+#include <iostream>
+
+void display();
+
+//some additional things needed for mouse interaction
+void processMouseClick(int button, int state, int x, int y); //----Call back function---// similar to menu processing, this process mouse click
+
+float* PixelBuffer;
+int MainWindow;
+int main(int argc, char *argv[])
+{
+	PixelBuffer = new float[300 * 300 * 3];
+	for (int i = 0; i < 300 * 300 * 3; i++)
+	{
+		PixelBuffer[i] = 0;
+	}
+
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE);
+	glutInitWindowSize(300, 300);
+	glutInitWindowPosition(100, 100);
+
+	MainWindow = glutCreateWindow("Hello Graphics!!");
+	glClearColor(0, 0, 0, 0);
+	glutDisplayFunc(display);
+
+	//set call back function to the one we want
+	glutMouseFunc(processMouseClick);
+
+	glutMainLoop();
+	return 0;
+}
+
+
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glLoadIdentity();
+
+	glDrawPixels(300, 300, GL_RGB, GL_FLOAT, PixelBuffer);
+
+	glFlush();
+}
+
+//button can be either GLUT_LEFT_BUTTON, GLUT_MIDDLE_BUTTON, or GLUT_RIGHT_BUTTON.
+//state can be either GLUT_UP or GLUT_DOWN
+//x, y are window position, with (0,0) at top left and x is to the right, y is down (different from normal convention)
+void processMouseClick(int button, int state, int x, int y)
+{
+	//here we grab the left button click,
+	if (button == GLUT_LEFT_BUTTON)
+	{
+		PixelBuffer[((300 - y) * 300 + x) * 3] = 1;
+		PixelBuffer[((300 - y) * 300 + x) * 3 + 1] = 1;
+		PixelBuffer[((300 - y) * 300 + x) * 3 + 2] = 1;
+	}
+	else if (button == GLUT_RIGHT_BUTTON)
+	{
+		//what shuould we do here?
+	}
+}
